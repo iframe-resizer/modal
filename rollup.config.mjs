@@ -6,7 +6,7 @@ export default {
   input: "src/index.js",
   output: {
     file: "index.js",
-    format: "esm",
+    format: "iife",
     name: "ifrModal",
   },
   plugins: [
