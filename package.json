@@ -1,0 +1,26 @@
+{
+  "name": "@iframe-resizer/modal",
+  "version": "1.0.0",
+  "description": "Unlicensed modal",
+  "main": "index.js",
+  "scripts": {
+    "build": "rollup -c"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/iframe-resizer/modal.git"
+  },
+  "author": "David J. Bradshaw",
+  "license": "GPL-3.0-or-later",
+  "bugs": {
+    "url": "https://github.com/iframe-resizer/modal/issues"
+  },
+  "homepage": "https://github.com/iframe-resizer/modal#readme",
+  "dependencies": {
+    "@rollup/plugin-node-resolve": "^15.2.3",
+    "@rollup/plugin-terser": "^0.4.4",
+    "micromodal": "^0.4.10",
+    "rollup": "^4.18.0",
+    "rollup-plugin-filesize": "^10.0.0"
+  }
+}

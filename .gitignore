@@ -1,0 +1,7 @@
+.DS_Store
+.coveralls.yml
+node_modules
+npm-debug.log
+coverage*
+.idea
+index.js
