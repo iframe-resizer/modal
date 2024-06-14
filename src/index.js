@@ -3,9 +3,9 @@ import { str } from 'crc-32'
 
 const crc = data => str(data).toString(16)
 
-const styleName = crc(Math.random())
-const overlayName = crc(Math.random())
-const containerName = crc(Math.random())
+const styleName = `s${crc(Math.random())}`
+const overlayName = `o${crc(Math.random())}`
+const containerName = `c${crc(Math.random())}`
 
 const css = `
   .${styleName} {
