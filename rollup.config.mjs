@@ -4,31 +4,28 @@ import resolve from "@rollup/plugin-node-resolve";
 import terser from "@rollup/plugin-terser";
 
 export default {
-  input: 'src/index.js',
+  input: 'src/modal.js',
   output: {
-    file: 'index.js',
+    file: 'iframe-resizer.modal.js',
     format: 'iife',
     name: 'ifrModal',
   },
   plugins: [
     filesize(),
-    terser({
-      output: {
-        comments: false,
-      },
-    }),
+    // terser({
+    //   output: {
+    //     comments: false,
+    //   },
+    // }),
     resolve(),
     copy({
       hook: 'closeBundle',
       targets: [
         {
-          src: 'index.js',
+          src: 'iframe-resizer.modal.js',
           dest: '.',
           transform: (contents) =>
-            contents
-              .toString()
-              .replace(/  /g, '')
-              .replace(/\\n/g, ''),
+            contents.toString().replace(/  /g, ''),
         },
       ],
       verbose: true,

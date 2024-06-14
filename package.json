@@ -2,7 +2,7 @@
   "name": "@iframe-resizer/modal",
   "version": "1.0.0",
   "description": "Unlicensed modal",
-  "main": "index.js",
+  "main": "iframe-resizer.modal.js",
   "scripts": {
     "build": "rollup -c"
   },
@@ -17,7 +17,6 @@
   },
   "homepage": "https://github.com/iframe-resizer/modal#readme",
   "dependencies": {
-    "crc-32": "https://cdn.sheetjs.com/crc-32-latest/crc-32-latest.tgz",
     "micromodal": "^0.4.10",
     "rollup-plugin-copy": "^3.5.0"
   },
