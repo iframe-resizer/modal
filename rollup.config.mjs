@@ -1,7 +1,6 @@
 import copy from "rollup-plugin-copy";
 import filesize from "rollup-plugin-filesize";
 import resolve from "@rollup/plugin-node-resolve";
-import terser from "@rollup/plugin-terser";
 
 export default {
   input: 'src/modal.js',
@@ -12,11 +11,6 @@ export default {
   },
   plugins: [
     filesize(),
-    // terser({
-    //   output: {
-    //     comments: false,
-    //   },
-    // }),
     resolve(),
     copy({
       hook: 'closeBundle',
