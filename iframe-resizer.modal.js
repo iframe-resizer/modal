@@ -2,7 +2,7 @@
 'use strict';
 
 const css = `
-html body dialog::backdrop {
+dialog#iframeResizer::backdrop {
 background-color:#999;
 opacity: 0.5;
 }

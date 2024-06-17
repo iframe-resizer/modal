@@ -1,6 +1,6 @@
 {
   "name": "@iframe-resizer/modal",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Unlicensed modal",
   "main": "iframe-resizer.modal.js",
   "scripts": {
