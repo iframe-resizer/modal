@@ -26,7 +26,7 @@ const html = `
         <p>
           For more information please see: <br><a style="float: none;margin:0 0 1rem;padding: 0" target="iframeResizer" href="https://iframe-resizer.com">https://iframe-resizer.com</a>
         </p>
-        <p style="text-align:center;margin:1.2rem"><button aria-label="Close modal">OK</button></p>
+        <p style="text-align:center;margin:1.2rem 0 0"><button aria-label="Close modal">OK</button></p>
       </div>
     </dialog>
 `
