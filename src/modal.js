@@ -15,7 +15,7 @@ const html = `
         </p>
         <h3>Commercial License</h3>
         <p>
-          For commercial use, iframe-resizer requires a low cost one time license fee. (<a tabindex="3" style="float: none;margin:0 0 1rem;padding: 0" target="iframeResizer" href="https://iframe-resizer.com/pricing">https://iframe-resizer.com/pricing</a>)
+          For commercial use, iframe-resizer requires a low cost one time license fee. (<a style="float: none;margin:0 0 1rem;padding: 0" target="iframeResizer" href="https://iframe-resizer.com/pricing">https://iframe-resizer.com/pricing</a>)
         </p>
         <h3>Open Source License</h3>
         <p>
@@ -24,35 +24,29 @@ const html = `
           To confirm you accept these terms and remove this message, please set the license key in iframe-resizer options to <b>GPLv3</b>.
         </p>
         <p>
-          For more information please see: <br><a tabindex="2" style="float: none;margin:0 0 1rem;padding: 0" target="iframeResizer" href="https://iframe-resizer.com">https://iframe-resizer.com</a>
+          For more information please see: <br><a style="float: none;margin:0 0 1rem;padding: 0" target="iframeResizer" href="https://iframe-resizer.com">https://iframe-resizer.com</a>
         </p>
-        <p style="text-align:center;margin:1.2rem"><button aria-label="Close modal" tabindex="2">OK</button></p>
-        
+        <p style="text-align:center;margin:1.2rem"><button aria-label="Close modal">OK</button></p>
       </div>
     </dialog>
 `
 
 const setMH = (mh) => (document.body.style.minHeight = mh)
 const { minHeight } = document.body.style
+setMH('33rem')
 
 const style = document.createElement('style')
 style.textContent = css
 document.head.appendChild(style)
-
-setMH('33rem')
-
 document.body.insertAdjacentHTML('afterbegin', html)
 
-const dialog = document.querySelector('dialog')
+const dialog = document.querySelector('dialog#iframeResizer')
+const closeButton = dialog.querySelectorAll('button')
 
-dialog.addEventListener('close', () => {
+closeButton.forEach(el => el.addEventListener('click', () => {
   setMH(minHeight)
-})
-
-const closeButton = document.querySelector('dialog button')
-closeButton.focus()
-closeButton.addEventListener('click', () => {
   dialog.close()
-})
+}))
+
 dialog.showModal()
 
