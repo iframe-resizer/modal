@@ -1,6 +1,21 @@
 (function () {
 'use strict';
 
+/**
+ * This file is only loaded if no license key is provided.
+ *
+ * Doing it this way rather than importing the script directly
+ * to avoid bundling as it should never be needed in production.
+ *
+ * This reduces the iframe-resizer bundle size by 16%.
+ *
+ * I've thought long and hard about doing it this way and I
+ * welcome feedback on this approach.
+ * 
+ * David J. Bradshaw - info@iframe-resizer.com
+ *
+ */
+
 const css = `
 dialog#iframeResizer::backdrop {
 background-color:#999;
@@ -27,7 +42,7 @@ If you are using this library in a non-commercial open source project then you c
 To confirm you accept these terms and remove this message, please set the license key in iframe-resizer options to <b>GPLv3</b>.
 </p>
 <p>
-For more information please see: <br><a style="float: none;margin:0 0 1rem;padding: 0" target="iframeResizer" href="https://iframe-resizer.com">https://iframe-resizer.com</a>
+For more information please see: <a style="float: none;margin:0 0 1rem;padding: 0" target="iframeResizer" href="https://iframe-resizer.com">https://iframe-resizer.com</a>
 </p>
 <p style="text-align:center;margin:1.2rem 0 0"><button aria-label="Close modal">OK</button></p>
 </div>
@@ -40,16 +55,18 @@ setMH('33rem');
 
 const style = document.createElement('style');
 style.textContent = css;
-document.head.appendChild(style);
+document.head.append(style);
 document.body.insertAdjacentHTML('afterbegin', html);
 
 const dialog = document.querySelector('dialog#iframeResizer');
 const closeButton = dialog.querySelectorAll('button');
 
-closeButton.forEach(el => el.addEventListener('click', () => {
+closeButton.forEach((el) =>
+el.addEventListener('click', () => {
 setMH(minHeight);
 dialog.close();
-}));
+}),
+);
 
 dialog.showModal();
 

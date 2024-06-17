@@ -1,3 +1,18 @@
+/**
+ * This file is only loaded if no license key is provided.
+ *
+ * Doing it this way rather than importing the script directly
+ * to avoid bundling as it will never be needed in production.
+ *
+ * This reduces the iframe-resizer bundle size by 16%.
+ *
+ * I've thought long and hard about doing it this way and I
+ * welcome feedback on this approach.
+ * 
+ * David J. Bradshaw - info@iframe-resizer.com
+ *
+ */
+
 const css = `
   dialog#iframeResizer::backdrop {
     background-color:#999;
@@ -37,16 +52,17 @@ setMH('33rem')
 
 const style = document.createElement('style')
 style.textContent = css
-document.head.appendChild(style)
+document.head.append(style)
 document.body.insertAdjacentHTML('afterbegin', html)
 
 const dialog = document.querySelector('dialog#iframeResizer')
 const closeButton = dialog.querySelectorAll('button')
 
-closeButton.forEach(el => el.addEventListener('click', () => {
-  setMH(minHeight)
-  dialog.close()
-}))
+closeButton.forEach((el) =>
+  el.addEventListener('click', () => {
+    setMH(minHeight)
+    dialog.close()
+  }),
+)
 
 dialog.showModal()
-
