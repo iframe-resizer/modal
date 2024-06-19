@@ -25,6 +25,7 @@ const html = `
       <div style="max-width:500px;padding:16px 20px;" role="dialog" aria-modal="true" aria-labelledby="iframe-resizer-modal-title">
         <button aria-label="Close modal" style="position: absolute;top: 0;right: 0;padding: 0.5rem 1rem;font-size: 1.5rem;background-color: transparent;border: none;cursor: pointer;outline-color:#FEF6D5">&times;</button>  
         <h2 id="iframe-resizer-modal-title" style="text-align: center;margin-top:0;">Iframe-Resizer</h2>  
+        <h3 style="color: #c00">Missing License Key</h3>
         <p>
           The <b>iframe-resizer</b> library is available with both Commercial and Open-Source licenses.
         </p>
@@ -48,7 +49,7 @@ const html = `
 
 const setMH = (mh) => (document.body.style.minHeight = mh)
 const { minHeight } = document.body.style
-setMH('33rem')
+setMH('34rem')
 
 const style = document.createElement('style')
 style.textContent = css

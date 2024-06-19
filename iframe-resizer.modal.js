@@ -5,7 +5,7 @@
  * This file is only loaded if no license key is provided.
  *
  * Doing it this way rather than importing the script directly
- * to avoid bundling as it should never be needed in production.
+ * to avoid bundling as it will never be needed in production.
  *
  * This reduces the iframe-resizer bundle size by 16%.
  *
@@ -28,6 +28,7 @@ const html = `
 <div style="max-width:500px;padding:16px 20px;" role="dialog" aria-modal="true" aria-labelledby="iframe-resizer-modal-title">
 <button aria-label="Close modal" style="position: absolute;top: 0;right: 0;padding: 0.5rem 1rem;font-size: 1.5rem;background-color: transparent;border: none;cursor: pointer;outline-color:#FEF6D5">&times;</button>
 <h2 id="iframe-resizer-modal-title" style="text-align: center;margin-top:0;">Iframe-Resizer</h2>
+<h3 style="color: #c00">Missing License Key</h3>
 <p>
 The <b>iframe-resizer</b> library is available with both Commercial and Open-Source licenses.
 </p>
@@ -42,7 +43,7 @@ If you are using this library in a non-commercial open source project then you c
 To confirm you accept these terms and remove this message, please set the license key in iframe-resizer options to <b>GPLv3</b>.
 </p>
 <p>
-For more information please see: <a style="float: none;margin:0 0 1rem;padding: 0" target="iframeResizer" href="https://iframe-resizer.com">https://iframe-resizer.com</a>
+For more information please see: <br><a style="float: none;margin:0 0 1rem;padding: 0" target="iframeResizer" href="https://iframe-resizer.com">https://iframe-resizer.com</a>
 </p>
 <p style="text-align:center;margin:1.2rem 0 0"><button aria-label="Close modal">OK</button></p>
 </div>
@@ -51,7 +52,7 @@ For more information please see: <a style="float: none;margin:0 0 1rem;padding: 
 
 const setMH = (mh) => (document.body.style.minHeight = mh);
 const { minHeight } = document.body.style;
-setMH('33rem');
+setMH('34rem');
 
 const style = document.createElement('style');
 style.textContent = css;
